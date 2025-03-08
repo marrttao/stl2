@@ -10,4 +10,10 @@
       <Filter>main</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="assets\functors\functors.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="utils\libs\libs.h" />
+  </ItemGroup>
 </Project>
