@@ -9,9 +9,12 @@
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="assets\dealership\dealership.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="assets\functors\functors.h" />
+    <ClInclude Include="assets\car\car.h" />
+    <ClInclude Include="assets\dealership\Idealership.h" />
+    <ClInclude Include="assets\dealership\dealership.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="utils\libs\libs.h" />

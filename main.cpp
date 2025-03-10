@@ -1,65 +1,41 @@
-#include <iostream>
-#include "assets/functors/functors.h"
-
-using namespace std;
-
-static bool isEven(int n) {
-    return n % 2 == 0;
-}
+#include "assets/dealership/dealership.h"
 
 int main() {
-    vector<int> vec = { 5, 3, 8, 1, 9, 2 };
 
+	Dealership dealership;
+	Car car1{ "BMW", 2020, 2 };
+	Car car2{ "Audi", 2019, 3 };
+	Car car3{ "Mercedes", 2018, 4 };
+	Car car4{ "Toyota", 2017, 5 };
+	Car car5{ "Nissan", 2016, 6 };
+	Car car6{ "Mazda", 2015, 7 };
+	Car car7{ "Honda", 2014, 8 };
+	Car car8{ "Ford", 2013, 9 };
+	Car car9{ "Chevrolet", 2012, 10 };
+	Car car10{ "Volkswagen", 2011, 11 };
 
-    Min<int> minFunctor;
-    cout << "Min: " << minFunctor(vec) << endl;
+	dealership.addCar(car1);
+	dealership.addCar(car2);
+	dealership.addCar(car3);
+	dealership.addCar(car4);
+	dealership.addCar(car5);
+	dealership.addCar(car6);
+	dealership.addCar(car7);
+	dealership.addCar(car8);
+	dealership.addCar(car9);
+	dealership.addCar(car10);
 
-
-    Max<int> maxFunctor;
-    cout << "Max: " << maxFunctor(vec) << endl;
-
-
-    SortDown<int> sortDownFunctor;
-    vector<int> sortedDownVec = sortDownFunctor(vec);
-    cout << "Sorted Down: ";
-    for (int n : sortedDownVec) {
-        cout << n << " ";
-    }
-    cout << endl;
-
-
-    SortUp<int> sortUpFunctor;
-    vector<int> sortedUpVec = sortUpFunctor(vec);
-    cout << "Sorted Up: ";
-    for (int n : sortedUpVec) {
-        cout << n << " ";
-    }
-    cout << endl;
-
-
-    ResizeOnConst<int> resizeOnConstFunctor;
-    vector<int> resizedVec = resizeOnConstFunctor(vec, 2);
-    cout << "Resized by 2: ";
-    for (int n : resizedVec) {
-        cout << n << " ";
-    }
-    cout << endl;
-
-    NegativeResizeConst<int> negativeResizeConstFunctor;
-    vector<int> negativeResizedVec = negativeResizeConstFunctor(vec, 1);
-    cout << "Negative Resized by 1: ";
-    for (int n : negativeResizedVec) {
-        cout << n << " ";
-    }
-    cout << endl;
-
-    DeleteIf<int> deleteIfFunctor;
-    vector<int> filteredVec = deleteIfFunctor(vec, isEven);
-    cout << "Filtered (remove even): ";
-    for (int n : filteredVec) {
-        cout << n << " ";
-    }
-    cout << endl;
-
-    return 0;
+	dealership.showCars();
+	std::cout << "----------------------" << std::endl;
+	dealership.showCarById(5);
+	std::cout << "----------------------" << std::endl;
+	dealership.findById(5);
+	std::cout << "----------------------" << std::endl;
+	dealership.findByName("Toyota");
+	std::cout << "----------------------" << std::endl;
+	dealership.sortById();
+	dealership.showCars();
+	std::cout << "----------------------" << std::endl;
+	dealership.sortByName();
+	dealership.showCars();
 }

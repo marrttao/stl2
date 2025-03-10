@@ -127,10 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assets\dealership\dealership.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="assets\functors\functors.h" />
+    <ClInclude Include="assets\car\car.h" />
+    <ClInclude Include="assets\dealership\dealership.h" />
+    <ClInclude Include="assets\dealership\Idealership.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="utils\libs\libs.h" />
